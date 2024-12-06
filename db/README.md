@@ -2,10 +2,10 @@
 
 ## 目录结构
 
-db/
-├── chinese-poetry-master/
-├── processed/
-└── raw_poems/
+db/  
+├── chinese-poetry-master/  
+├── processed/  
+└── raw_poems/  
 
 ## 内容
 
