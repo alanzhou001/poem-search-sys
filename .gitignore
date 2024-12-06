@@ -1,7 +1,4 @@
 # 忽略 chinese-poetry-master 目录
-db/chinese-poetry-master
-db/raw_poems
-db/processed
-
+db
 # 忽略日志文件
 logs

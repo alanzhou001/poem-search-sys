@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1cfeeb88f2ed1116bc316c20bf2d984a3235d9ccd51a685fff1949faeb6d6c9b
-size 192
+{
+    "raw_poem_directory": "db/raw_poems/",
+    "processed_poem_file": "db/processed/poem_database_with_pagerank.json",
+    "log_directory": "logs/",
+    "retrieval_target_length": 5
+}
