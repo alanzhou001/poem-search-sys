@@ -1,0 +1,10 @@
+# 忽略 chinese-poetry-master 目录
+db/chinese-poetry-master
+db/raw_poems
+
+# 忽略处理后的 JSON 文件
+db/processed/poem_database_with_followers.json
+db/processed/poem_database_with_pagerank.json
+
+# 忽略日志文件
+logs
