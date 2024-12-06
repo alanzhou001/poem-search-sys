@@ -3,4 +3,5 @@ db/chinese-poetry-master
 db/processed
 db/raw_poems
 # 忽略日志文件
-logs/
+logs/retrieval.log
+logs/trie_build.log
