@@ -3,7 +3,6 @@
 ## 目录结构
 
 logs/  
-├── error.log  
 ├── process.log  
 └── access.log  
 
