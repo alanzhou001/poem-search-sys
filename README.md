@@ -16,11 +16,11 @@
 
 数据来源于 [`chinese-poetry`](https://github.com/chinese-poetry/chinese-poetry)，在此基础上进行了数据的合并、分割、去重等操作，同时改写数据结构为有权 Trie 树，权重采用 PageRank 算法计算。
 
-为缩短加载时间，将 `Trie 树`按首字分割，并存储为 `msgpack `文件，搜索时按需加载。
+为缩短加载时间，将 `Trie 树`按首字分割，并存储为 ` msgpack `文件，搜索时按需加载。
 
 ### 搜索
 
-使用` PageRank `评分从最优组合开始检索` Trie 树`直到找到解。
+使用` PageRank `评分从最优组合开始检索` Trie 树 `直到找到解。
 
 ## 代码实现
 
