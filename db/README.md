@@ -31,4 +31,4 @@ db/
 
 ## 说明
 
-由于数据库文件较大，无法直接上传至github，如有需要，联系作者获取。
+由于数据库文件较大，无法直接上传至github，如有需要，可通过[百度网盘](https://pan.baidu.com/s/1UCfZWG6yM_XhxfvMJs3p-w?pwd=95ru)获取。
