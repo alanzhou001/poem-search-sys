@@ -29,10 +29,13 @@
 - [`build-database.py`](src/build-database.py)：用于读取原始数据并整理为完整的诗句数据库
 - [`deduplication.py`](src/deduplication.py) 和 [`split-database.py`](src/split-database.py)：分别用于进行降重和分割诗句操作
 - [`new-database.py`](src/new-database.py)：用于生成 PageRank 评分并构建字序表
-- [`PageRank.py`](src/PageRank.py)：存放了 PageRank 算法代码
-- [`trie.py`](src/trie.py)：为 Trie 树的数据结构
+- [trie-database.py](src/trie-database.py)：序列化存储`trie树`结构的诗词库
+- [`PageRank.py`](src/PageRank.py)：存放了` PageRank `算法代码
+- [`trie.py`](src/trie.py)：为`Trie 树`的数据结构
 - [`utils.py`](src/utils.py)：用于记录日志
-- [`trie-retrival.py`](src/trie-retrieval.py)：用于搜索
+- [`trie_retrival.py`](src/trie_retrieval.py)：用于搜索
+- [fetch_char.py](src/fetch_char.py): 从网页获取输入
+- [main.py](src/main.py): 主程序
 
 此外，相关配置可通过 [`config.json`](config/config.json) 进行调整。
 
