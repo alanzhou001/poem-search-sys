@@ -2,6 +2,12 @@
 db/chinese-poetry-master
 db/processed
 db/raw_poems
+
 # 忽略日志文件
 logs/retrieval.log
 logs/trie_build.log
+
+# 忽略压缩文件
+db/chinese-poetry-master.rar
+db/processed.rar
+db/raw_poems.rar
