@@ -2,5 +2,8 @@
     "raw_poem_directory": "db/raw_poems/",
     "processed_poem_file": "db/processed/poem_database_with_pagerank.json",
     "log_directory": "logs/",
-    "retrieval_target_length": 5
+    "retrieval_target_length": 5,
+    "edge_driver_path": "D:\\poem-search-sys\\edgedriver\\msedgedriver.exe",
+    "oriurl": "https://www.arealme.com/9-grid-chinese-poem-quiz/cn/",
+    "poem_database_path": "D:\\poem-search-sys\\db\\processed\\poem_database_with_pagerank.json"
 }

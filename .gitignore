@@ -6,8 +6,13 @@ db/raw_poems
 # 忽略日志文件
 logs/retrieval.log
 logs/trie_build.log
+logs/fetch_char.log
+logs/trie_retrieval.log
 
 # 忽略压缩文件
 db/chinese-poetry-master.rar
 db/processed.rar
 db/raw_poems.rar
+
+# 忽略msedgedriver.exe
+edgedriver/msedgedriver.exe

@@ -10,14 +10,19 @@ from opencc import OpenCC
 cc_to_traditional = OpenCC('s2t')  # 简体到繁体
 cc_to_simplified = OpenCC('t2s')  # 繁体到简体
 
-# 主程序：进行诗句检索
-def main():
+# 进行诗句检索的函数
+def search_poems(input_chars):
     config = load_config()
     log_dir = config["log_directory"]
-    logger = setup_logger(log_dir)
+    logger = setup_logger(log_dir, "trie_retrieval.log")
     
-    input_chars = ["春", "平", "野", "松", "雄", "草", "宅", "綠", "石"]
-    target_length = config["retrieval_target_length"]
+    # 根据 input_chars 的长度确定 target_length
+    if len(input_chars) == 9:
+        target_length = 5
+    elif len(input_chars) == 12:
+        target_length = 7
+    else:
+        raise ValueError("input_chars 的长度必须为 9 或 12")
 
     # 将输入字符转换为繁体
     input_chars_traditional = [cc_to_traditional.convert(char) for char in input_chars]
@@ -41,8 +46,12 @@ def main():
             # 将结果转换为简体
             result_simplified = cc_to_simplified.convert(result)
             logger.info(f"找到诗句：{result_simplified}，评分：{score}")
+            print(f"找到诗句：{result_simplified}，评分：{score}")
     else:
         logger.info("未找到符合条件的诗句")
+        print("未找到符合条件的诗句")
 
+# 如果需要独立运行该脚本，可以保留以下代码
 if __name__ == "__main__":
-    main()
+    input_chars = ["春", "平", "野", "松", "雄", "草", "宅", "綠", "石"]
+    search_poems(input_chars)
