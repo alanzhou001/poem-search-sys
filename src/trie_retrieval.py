@@ -42,16 +42,23 @@ def search_poems(input_chars):
     results = trie.search(input_chars_traditional, target_length)
     if results:
         results.sort(key=lambda x: -x[1])  # 按 PageRank 分数排序
+        formatted_results = []
         for result, score in results:
             # 将结果转换为简体
             result_simplified = cc_to_simplified.convert(result)
             logger.info(f"找到诗句：{result_simplified}，评分：{score}")
-            print(f"找到诗句：{result_simplified}，评分：{score}")
+            formatted_results.append((result_simplified, score))
+        return formatted_results
     else:
         logger.info("未找到符合条件的诗句")
-        print("未找到符合条件的诗句")
+        return []
 
 # 如果需要独立运行该脚本，可以保留以下代码
 if __name__ == "__main__":
     input_chars = ["春", "平", "野", "松", "雄", "草", "宅", "綠", "石"]
-    search_poems(input_chars)
+    results = search_poems(input_chars)
+    if results:
+        for result, score in results:
+            print(f"找到诗句：{result}，评分：{score}")
+    else:
+        print("未找到符合条件的诗句")
