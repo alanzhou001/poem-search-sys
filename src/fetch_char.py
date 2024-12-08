@@ -47,14 +47,14 @@ def fetch_poem_characters():
         for elem in allelem:
             word = elem.text
             characters.append(word)
-            elem.click()
-            time.sleep(1)
+            #elem.click()
+            #time.sleep(1)
 
     except Exception as e:
         logger.error(f"出现异常：{e}")
 
     finally:
-        time.sleep(5)  # 等待5秒，查看爬取结果
+        #time.sleep(5)  # 等待5秒，查看爬取结果
         driver.quit()  # 退出浏览器
 
     return characters
