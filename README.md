@@ -28,7 +28,7 @@
 
 - [`build-database.py`](src/build-database.py)：用于读取原始数据并整理为完整的诗句数据库
 - [`deduplication.py`](src/deduplication.py) 和 [`split-database.py`](src/split-database.py)：分别用于进行降重和分割诗句操作
-- [`new-database.py`](src/new-database.py)：用于生成 PageRank 评分并构建字序表
+- [`new-database.py`](src/new-database.py)：用于生成 `PageRank`评分并构建字序表
 - [trie-database.py](src/trie-database.py)：序列化存储`trie树`结构的诗词库
 - [`PageRank.py`](src/PageRank.py)：存放了` PageRank `算法代码
 - [`trie.py`](src/trie.py)：为`Trie 树`的数据结构
