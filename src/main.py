@@ -39,7 +39,8 @@ def main():
 
             # 获取汉字列表
             chars = fetch_poem_characters(driver)
-            #print(chars) checkpoint1，第二次循环未成功获取
+            if not chars:
+                raise ValueError("未能抓取到汉字列表")
             # 调用诗句检索函数
             results = search_poems(chars)
             
@@ -47,11 +48,10 @@ def main():
             print("\n" + "="*40)
             print("\033[1;32m" + "检索结果：" + "\033[0m")
             if results:
-                for result, score in results:
-                    print(f"\033[1;34m找到诗句：{result}，评分：{score}\033[0m")
-                # 获取答案列表（取评分最高的诗句并转化为列表）
-                answer = list(results[0][0])
-                #print(answer) checkpoint2
+                result, score = results[0]
+                print(f"\033[1;34m找到诗句：{result}，评分：{score}\033[0m")
+                # 获取答案列表（取第一个结果并转化为列表）
+                answer = list(result)
             else:
                 print("\033[1;31m未找到符合条件的诗句\033[0m")
                 answer = chars[:7]  # 如果没有找到符合条件的诗句，使用前7个汉字作为答案
