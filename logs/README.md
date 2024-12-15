@@ -5,8 +5,7 @@
 logs/  
 ├── trie_build.log  
 ├── trie_retrival.log  
-├── fetch_char.log
-└── access.log  
+└── fetch_char.log
 
 ## 文件内容
 
