@@ -19,7 +19,7 @@ def fetch_poem_characters(driver, count):
 
         for elem in allelem:
             word = elem.text.strip()  # 去除前后空白字符
-            if word:  # 过滤掉空字符
+            if word:  # 过滤空字符
                 characters.append(word)
 
     except Exception as e:

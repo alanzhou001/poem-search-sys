@@ -56,7 +56,6 @@ def main():
                 answer = list(result)
             else:
                 print("\033[1;31m未找到符合条件的诗句\033[0m")
-                #answer = chars[:7]  # 如果没有找到符合条件的诗句，使用前7个汉字作为答案
             print("="*40 + "\n")
             
             # 输入汉字
@@ -75,11 +74,11 @@ def main():
                 skip_button.click()
                 time.sleep(0)
             except:
-                # 如果不存在了，说明正常跳转到下一题了，无需点击跳过按钮，直接进行下一题的处理
+                # 如果不存在说明正常跳转，无需点击跳过按钮，直接进入下一循环
                 pass
 
             count += 1
-            '''if count > 50:  # 这里假设最多做50道题，大家可以根据实际情况调整这个结束条件
+            '''if count > 50:  # 测试50题
                 break'''
 
         except Exception as e:

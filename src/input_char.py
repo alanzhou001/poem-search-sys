@@ -8,7 +8,7 @@ def input_characters(driver, chars, answer, count):
     
     # 按照答案列表顺序依次点击对应的汉字
     for char in answer:
-        index = chars.index(char) + 1  # 因为xpath中的序号从1开始，所以要加1
+        index = chars.index(char) + 1  # xpath中的序号从1开始，所以要加1
         xpath = xpath_template.format(count, index)
         elem = WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable((By.XPATH, xpath))

@@ -15,7 +15,7 @@ def setup_logger(log_dir, log_file_name):
         file_handler.setFormatter(formatter)
         logger.addHandler(file_handler)
         
-        # 添加控制台处理器
+        # 添加处理器
         console_handler = logging.StreamHandler()
         console_handler.setFormatter(formatter)
         logger.addHandler(console_handler)

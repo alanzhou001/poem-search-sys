@@ -6,7 +6,7 @@ from collections import defaultdict
 from PageRank import build_co_occurrence_graph
 from utils import setup_logger, load_config
 
-# 使用正则表达式提取 JSON 文件中的诗句
+# 正则表达式提取 JSON 文件中的诗句
 def extract_paragraphs_from_json(file_content):
     paragraphs = []
     matches = re.findall(r'"paragraphs":\s*\[(.*?)\]', file_content, re.DOTALL)

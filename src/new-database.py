@@ -29,7 +29,7 @@ with tqdm(poem_database, desc="处理诗句") as pbar:
             next_char = poem[i + 1]
             char_followers[char][next_char] += pagerank_scores.get(next_char, 0)
 
-# 将 defaultdict 转换为普通字典
+# 将 defaultdict 转换为字典
 char_followers = {char: dict(followers) for char, followers in char_followers.items()}
 
 # 将结果写回 JSON 文件
