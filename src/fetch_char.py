@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from utils import setup_logger, load_config
 
-def fetch_poem_characters(driver):
+def fetch_poem_characters(driver, count):
     # 读取配置文件
     config = load_config()
     log_dir = config["log_directory"]
@@ -15,7 +15,7 @@ def fetch_poem_characters(driver):
 
     try:
         # 爬取想要的信息
-        allelem = driver.find_elements(By.XPATH, '/html/body/ul/li[1]/div/div[1]/div[3]/b')
+        allelem = driver.find_elements(By.XPATH, '//*[@id="q{}"]/div/div[1]/div[3]/b'.format(count))
 
         for elem in allelem:
             word = elem.text.strip()  # 去除前后空白字符

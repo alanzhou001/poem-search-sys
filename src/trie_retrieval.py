@@ -24,22 +24,27 @@ def search_poems(input_chars):
     else:
         raise ValueError("input_chars 的长度必须为 9 或 12")
 
-    # 将输入字符转换为繁体
+    # 将输入字符转换为繁体和简体
     input_chars_traditional = [cc_to_traditional.convert(char) for char in input_chars]
+    input_chars_combined = list(set(input_chars + input_chars_traditional))
     
     logger.info("开始加载 Trie 树...")
     trie = Trie()
 
     # 按需加载 Trie 树的子树
-    for char in input_chars_traditional:
-        trie.load_subtree(char)
+    for char in input_chars_combined:
+        try:
+            trie.load_subtree(char)
+        except FileNotFoundError as e:
+            logger.error(f"文件未找到，跳过字符 {char}：{e}")
+            continue
 
     logger.info("Trie 树加载完成，开始检索...")
 
     # 对输入字符进行排序，按每个字符的最高 PageRank 分数排序
-    input_chars_traditional.sort(key=lambda char: -trie.root.children[char].pagerank_score if char in trie.root.children else 0)
+    input_chars_combined.sort(key=lambda char: -trie.root.children[char].pagerank_score if char in trie.root.children else 0)
 
-    results = trie.search(input_chars_traditional, target_length)
+    results = trie.search(input_chars_combined, target_length)
     if results:
         results.sort(key=lambda x: -x[1])  # 按 PageRank 分数排序
         formatted_results = []

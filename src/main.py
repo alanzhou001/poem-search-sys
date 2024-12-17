@@ -31,6 +31,8 @@ def main():
 
     count = 1
     while True:
+        chars = []
+        answer = []
         try:
             # 等待页面加载完成
             WebDriverWait(driver, 10).until(
@@ -38,7 +40,7 @@ def main():
             )
 
             # 获取汉字列表
-            chars = fetch_poem_characters(driver)
+            chars = fetch_poem_characters(driver, count)
             if not chars:
                 raise ValueError("未能抓取到汉字列表")
             # 调用诗句检索函数
@@ -54,7 +56,7 @@ def main():
                 answer = list(result)
             else:
                 print("\033[1;31m未找到符合条件的诗句\033[0m")
-                answer = chars[:7]  # 如果没有找到符合条件的诗句，使用前7个汉字作为答案
+                #answer = chars[:7]  # 如果没有找到符合条件的诗句，使用前7个汉字作为答案
             print("="*40 + "\n")
             
             # 输入汉字
@@ -71,21 +73,26 @@ def main():
                     EC.element_to_be_clickable((By.XPATH, skip_button_xpath))
                 )
                 skip_button.click()
-                time.sleep(1)
+                time.sleep(0)
             except:
                 # 如果不存在了，说明正常跳转到下一题了，无需点击跳过按钮，直接进行下一题的处理
                 pass
 
             count += 1
-            if count > 50:  # 这里假设最多做50道题，大家可以根据实际情况调整这个结束条件
-                break
+            '''if count > 50:  # 这里假设最多做50道题，大家可以根据实际情况调整这个结束条件
+                break'''
 
         except Exception as e:
             print(f"\033[1;31m发生错误：{e}\033[0m")
             print("\033[1;33m跳过当前循环，进入下一题...\033[0m")
+            skip_button_xpath = '//*[@id="q{}"]/div/div[1]/button'.format(count)
+            skip_button = WebDriverWait(driver, 5).until(
+                EC.element_to_be_clickable((By.XPATH, skip_button_xpath))
+            )
+            skip_button.click()
             continue
 
-    driver.quit()
+    #driver.quit()
 
 if __name__ == "__main__":
     main()
