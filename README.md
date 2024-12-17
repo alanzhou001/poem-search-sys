@@ -64,6 +64,14 @@
 - 🟠 未开始
 - ❌ 放弃
 
+## 运行演示
+
+
+
+<video src="https://github.com/user-attachments/assets/0db616b7-f49e-4c3c-bfc7-8c130cc0bb16" loop controls></video>
+
+
+
 ## 致谢
 
 - 感谢刘佳璐老师一学期以来的辛勤教学与耐心解答，感谢对于本课程小组作业的建议与指导；
