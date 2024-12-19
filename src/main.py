@@ -14,8 +14,10 @@ def main():
     config = load_config()
     edge_driver_path = config["edge_driver_path"]
     oriurl = config["oriurl"]
+    op = webdriver.EdgeOptions()
+    op.add_experimental_option("detach", True)
     service = Service(executable_path=edge_driver_path)
-    driver = webdriver.Edge(service=service)
+    driver = webdriver.Edge(options=op, service=service)
 
     # 浏览器自动驱动，登录网站
     driver.get(oriurl)
@@ -72,14 +74,14 @@ def main():
                     EC.element_to_be_clickable((By.XPATH, skip_button_xpath))
                 )
                 skip_button.click()
-                time.sleep(0)
+                time.sleep(0.5)
             except:
                 # 如果不存在说明正常跳转，无需点击跳过按钮，直接进入下一循环
                 pass
 
             count += 1
-            '''if count > 50:  # 测试50题
-                break'''
+            if count > 100:  # 测试50题
+                break
 
         except Exception as e:
             print(f"\033[1;31m发生错误：{e}\033[0m")
