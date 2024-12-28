@@ -35,6 +35,7 @@
 - [`utils.py`](src/utils.py)：用于记录日志
 - [`trie_retrival.py`](src/trie_retrieval.py)：用于搜索
 - [fetch_char.py](src/fetch_char.py): 从网页获取输入
+- [input_char.py](src\input_char.py): 将答案输入至网页
 - [main.py](src/main.py): 主程序
 
 此外，相关配置可通过 [`config.json`](config/config.json) 进行调整。
